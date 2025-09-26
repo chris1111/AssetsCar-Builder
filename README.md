@@ -6,6 +6,7 @@ So, change both files in the Resources of your new application, Zip the App then
 - Working from 10.8 to macOS Tahoe 26
 - You need an Icon (.png) 1024x1024px
 - Credit: [Apple](https://developer.apple.com/documentation/Xcode/managing-assets-with-asset-catalogs), [Platypus](https://github.com/sveinbjornt/Platypus)
+- View and Edit Assets.car files [Samra.zip](https://github.com/chris1111/AssetsCar-Builder/raw/refs/heads/main/SourcesApp/Samra/Samra.zip)
 
 Download ➥ [AssetsCar Builder](https://github.com/chris1111/AssetsCar-Builder/releases/tag/v1)
 
