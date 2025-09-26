@@ -1,5 +1,5 @@
 # AssetsCar Builder
-## Utility to create Assets.car from a PNG icon file on macOS
+## Utility to create Assets.car from a PNG icon file in macOS
 This is a very useful application, given that in macOS Tahoe 26, AppleScript applications now contain Assets.car files.
 So you'll have the Assets.car file created and also an applet.icns file.
 So, change both files in the Resources of your new application, Zip the App then Unzip and Voila.
