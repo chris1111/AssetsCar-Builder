@@ -1,0 +1,84 @@
+#!/bin/sh
+# AssetsCar-Builder
+# Copyright (c) 2025 chris1111. All Right Reserved
+# Permission to use, copy, modify, and/or distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+# Vars
+apptitle="AssetsCar-Builder"
+version="1.0"
+BuildAssetsCar="$HOME/Desktop/BuildAssets.Car"
+BuildAssets="/Private/tmp/BuildAssets"
+Assets="/Private/tmp/Assets.xcassets"
+AppIconAssets="/Private/tmp/Assets.xcassets/ImageIcon.imageset"
+# Set Icon directory and file
+for files in "$@" ;do
+echo "Converting "$@" to ICON file "
+Sleep 2
+IFS='.' read -ra "ADDR" <<< "$1"
+echo "File name is $ADDR"
+Sleep 2
+ICONS_DIR="${ADDR[0]}".iconset
+rm -rf $ICONS_DIR
+rm -rf $ICNSOUT
+rm -rf $BuildAssets
+rm -rf $Assets
+rm -rf $BuildAssetsCar
+rm -rf "${ADDR[0]}.icns"
+mkdir "$ICONS_DIR"
+echo "Create all other images sizes "
+Sleep 2
+sips -z 16 16     "$1" --out "$ICONS_DIR"/icon_16x16.png
+sips -z 32 32     "$1" --out "$ICONS_DIR"/icon_16x16@2x.png
+sips -z 32 32     "$1" --out "$ICONS_DIR"/icon_32x32.png
+sips -z 64 64     "$1" --out "$ICONS_DIR"/icon_32x32@2x.png
+sips -z 128 128   "$1" --out "$ICONS_DIR"/icon_128x128.png
+sips -z 256 256   "$1" --out "$ICONS_DIR"/icon_128x128@2x.png
+sips -z 256 256   "$1" --out "$ICONS_DIR"/icon_256x256.png
+sips -z 512 512   "$1" --out "$ICONS_DIR"/icon_256x256@2x.png
+sips -z 512 512   "$1" --out "$ICONS_DIR"/icon_512x512.png
+sips -z 512 512   "$1" --out "$ICONS_DIR"/icon_512x512@2x.png
+sips -z 1024 1024   "$1" --out "$ICONS_DIR"/icon_1024x1024.png
+sips -z 1024 1024   "$1" --out "$ICONS_DIR"/icon_1024x1024@2x.png
+cp "$1" "$ICONS_DIR"/icon_512x512.png
+iconutil -c icns "$ICONS_DIR"
+Sleep 1
+cp -Rp ./Assets.xcassets /Private/tmp/
+Sleep 1
+mkdir -p $BuildAssets
+Sleep 1
+cp -Rp "$ICONS_DIR/icon_256x256@2x.png" "$ICONS_DIR/icon_512x512.png"
+Sleep 1
+cp -Rp "$ICONS_DIR/icon_1024x1024.png" "$ICONS_DIR/icon_512x512@2x.png"
+Sleep 1
+rm -rf "$ICONS_DIR/icon_1024x1024.png"
+rm -rf "/$ICONS_DIR/icon_1024x1024@2x.png"
+cp -Rp "$ICONS_DIR"/*.png $Assets/AppIcon.appiconset
+Sleep 1
+cp -Rp "$ICONS_DIR/icon_512x512.png" "$AppIconAssets/AppIcon.png"
+Sleep 1
+SetFile -a e $AppIconAssets/AppIcon.png
+# Set Assetscar directory and file
+echo "Converting "$@" to Assets.car file "
+Sleep 2
+xcrun actool $Assets --compile $BuildAssets --platform macosx --minimum-deployment-target 15.1 --app-icon AppIcon --output-partial-info-plist $BuildAssets/partial.plist
+Sleep 1
+mkdir -p $BuildAssetsCar
+Sleep 1
+cp -Rp $BuildAssets/AppIcon.icns $BuildAssets/applet.icns
+mv $BuildAssets $BuildAssetsCar
+mv $Assets $BuildAssetsCar
+mv "$ICONS_DIR" $BuildAssetsCar
+mv "${ADDR[0]}.icns" $BuildAssetsCar
+# Open Assetscar directory and file
+Open -R $BuildAssetsCar/BuildAssets/Assets.car
+done
+
+
