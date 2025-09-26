@@ -7,6 +7,8 @@ So, change both files in the Resources of your new application, Zip the App then
 - You need an Icon (.png) 1024x1024px
 - Credit: Apple, [Platypus](https://github.com/sveinbjornt/Platypus)
 
+Download ➥ [AssetsCar Builder](https://github.com/chris1111/AssetsCar-Builder/releases/tag/v1)
+
 ## Usage: Drop the (1024x1024px .png Icon) to the window of the App
 
 <img width="521" height="520" alt="Screenshot" src="https://github.com/user-attachments/assets/7cd50399-bab8-4f3a-8486-480e06708314" />
