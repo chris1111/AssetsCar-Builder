@@ -5,7 +5,7 @@ So you'll have the Assets.car file created and also an applet.icns file.
 So, change both files in the Resources of your new application, Zip the App then Unzip and Voila.
 - Working from 10.8 to macOS Tahoe 26
 - You need an Icon (.png) 1024x1024px
-- Credit: Apple, [Platypus](https://github.com/sveinbjornt/Platypus)
+- Credit: [Apple](https://developer.apple.com/documentation/Xcode/managing-assets-with-asset-catalogs), [Platypus](https://github.com/sveinbjornt/Platypus)
 
 Download ➥ [AssetsCar Builder](https://github.com/chris1111/AssetsCar-Builder/releases/tag/v1)
 
