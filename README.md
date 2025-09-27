@@ -1,7 +1,6 @@
 # AssetsCar Builder
 
-[![pages-build-deployment](https://github.com/chris1111/AssetsCar-Builder/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/chris1111/AssetsCar-Builder/actions/workflows/pages/pages-build-deployment)
-
+[![pages-build-deployment](https://github.com/chris1111/AssetsCar-Builder/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/chris1111/AssetsCar-Builder/actions/workflows/pages/pages-build-deployment) [![License: MIT](https://github.com/chris1111/AssetsCar-Builder/blob/main/SourcesApp/MIT.svg)](https://github.com/chris1111/AssetsCar-Builder/blob/main/LICENSE)
 ## Utility to create Assets.car from a PNG icon file in macOS
 #### This is a very useful application, given that in macOS Tahoe 26, AppleScript applications now contain Assets.car files.
 So you'll have the Assets.car file created and also an applet.icns file.
