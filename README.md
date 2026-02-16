@@ -19,9 +19,8 @@ Download ➥ [AssetsCar Builder](https://github.com/chris1111/AssetsCar-Builder/
 
 ## Usage: Drop the (512x512px .png Icon) to the window of the App
 
-<img width="521" height="521" alt="Screenshot" src="https://github.com/chris1111/AssetsCar-Builder/blob/main/SourcesApp/Screenshot.png?raw=true">
-
-<img width="1032" height="548" alt="Screenshot1" src="https://github.com/chris1111/AssetsCar-Builder/blob/main/SourcesApp/Screenshot1.png?raw=true">
+<p><img src="SourcesApp/Screenshot.png" alt="Icons Project" style="width:75%;"></p>
+<p><img src="SourcesApp/Screenshot1.png" alt="Icons Project" style="width:75%;"></p>
 
 
 
